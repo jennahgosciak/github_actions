@@ -7,7 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: psf/black@stable
+      - name: Install black
+        run: pip install black
+      - name: Run black
+        uses: psf/black@stable
       - name: Install flake8
         run: pip install flake8
       - name: Run flake8
