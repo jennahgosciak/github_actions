@@ -1,5 +1,13 @@
-name: learn-github-actions
-on: [push]
+name: "Check Python Formatting"
+on:
+  push:
+  pull_request:
+
+permissions: read-all
+
+concurrency:
+  cancel-in-progress: true
+
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
